@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    tools:context=".ui.main.MainActivity">
+
+    <!-- done (2 points): Convert to ConstraintLayout -->
+    <!-- done (1 point): Address Android Studio warnings -->
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/my_random_user"
+        android:contentDescription="@string/name_image"
+        android:textAppearance="?textAppearanceHeadline4" />
+
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="100dp"
+        android:contentDescription="@string/main_image"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_title"
+        android:background="#33aaaaaa" />
+
+    <TextView
+        android:id="@+id/main_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        app:layout_constraintTop_toBottomOf="@+id/main_title"
+        app:layout_constraintStart_toEndOf="@+id/main_image"
+        android:textAppearance="?textAppearanceBody2"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/main_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main_name_label"
+        android:layout_marginStart="4dp"
+        android:textAppearance="?textAppearanceBody2"
+        tools:text="Jon" />
+
+    <TextView
+        android:id="@+id/main_email_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+
+        app:layout_constraintTop_toBottomOf="@+id/main_name_label"
+        app:layout_constraintStart_toEndOf="@+id/main_image"
+        android:textAppearance="?textAppearanceBody2"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/main_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main_email_label"
+        app:layout_constraintTop_toBottomOf="@+id/main_name_label"
+        android:textAppearance="?textAppearanceBody2"
+        tools:text="robert@test.com" />
+
+    <Button
+        android:id="@+id/main_see_details_button"
+        android:layout_width="0dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/main_email_label"
+        app:layout_constraintTop_toBottomOf="@+id/main_image"
+        android:layout_height="wrap_content"
+        android:text="@string/view_details"
+        tools:ignore="VisualLintButtonSize" />
+
+
+
+    <Button
+        android:id="@+id/main_refresh_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_see_details_button"
+        android:text="@string/refresh_random_user"
+        tools:ignore="VisualLintButtonSize" />
+
+
+
+    <View
+        android:id="@+id/main_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/main_refresh_button"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_refresh_button"
+        android:background="#11111111" />
+
+
+
+
+    <Button
+        android:id="@+id/main_user_list_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_divider"
+        android:layout_below="@id/main_divider"
+        android:text="@string/show_10_users"
+        tools:ignore="VisualLintButtonSize" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_user_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_user_list_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_below="@id/main_user_list_button" />
+
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+
+
+
+
+<!--        &lt;!&ndash; done (5 points): Convert to RecyclerView &ndash;&gt;-->
+<!--        &lt;!&ndash;    <ListView&ndash;&gt;-->
+<!--        &lt;!&ndash;      android:id="@+id/main_user_list"&ndash;&gt;-->
+<!--        &lt;!&ndash;      android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;      android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;      android:layout_marginTop="8dp" >&ndash;&gt;-->
+
+<!--        &lt;!&ndash;  &ndash;&gt;-->
+<!--        &lt;!&ndash;    </ListView>&ndash;&gt;-->
+<!--     -->
+<!--    </RelativeLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
